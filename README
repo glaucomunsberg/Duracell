@@ -1,10 +1,18 @@
+Versão 0.2
+	Implementação da interface da Fila
+
 Versão 0.1
 	Implementação
 		Criação da base do projeto como arquivos *.c, *h, Makefile e
 			Wiki com as especificações do trabalho
+
 Versão 0.0
 	Implementação
 		Automatico do projeto e acertos do git e github
 		
-We have a problem houston?!
+° We have a problem Houston?!
 	- No problem.
+
+° Obs.:
+	F - Implementação da Fila
+	P - Implementação da Pilha

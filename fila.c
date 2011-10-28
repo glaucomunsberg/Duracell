@@ -26,18 +26,22 @@ struct desc_fila *init()
 {
 	
 }
+
 int enqueue(elemento *x, struct desc_fila *descritor)
 {
 	return 0;
 }
+
 int dequeue(elemento *x, struct desc_fila *descritor){
 	
 	return 0;
 }
+
 unsigned int length(struct desc_fila * descritor){
 	
 	return 0;
 }
+
 int print(struct nodo * ptr){
 	
 	return 0;
