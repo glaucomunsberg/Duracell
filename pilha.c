@@ -1,23 +1,17 @@
-//      pilha.c
-//      
-//      Copyright 2011 Glauco Roberto Munsberg <glaucoroberto@Vostro>
-//      
-//      This program is free software; you can redistribute it and/or modify
-//      it under the terms of the GNU General Public License as published by
-//      the Free Software Foundation; either version 2 of the License, or
-//      (at your option) any later version.
-//      
-//      This program is distributed in the hope that it will be useful,
-//      but WITHOUT ANY WARRANTY; without even the implied warranty of
-//      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//      GNU General Public License for more details.
-//      
-//      You should have received a copy of the GNU General Public License
-//      along with this program; if not, write to the Free Software
-//      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-//      MA 02110-1301, USA.
-//      
-//      
+/* Autoria:
+ * 
+ * 		Universidade Federal de Pelotas
+ * 		Centro de Desenvolvimento Tecnológico
+ * 		Bacharelado em Ciência da Computação
+ * 		Glauco Roberto Munsberg dos Santos
+ * 			glaucomunsberg@gmail.com	
+ * 
+ * Sobre o Projeto:
+ * 		Trabalho desenvolvido como avaliação de Estrutura de Dados 1
+ * 		Para maiores informações sobre o projeto,
+ * 		ele se encontra disponível pelo endereço http://github.com/glaucomunsberg/Duracell
+ * 
+ */  
 
 #include <stdio.h>
 #include "pilha.h"
@@ -26,6 +20,7 @@ struct desc_pilha *init()
 {
 	
 }
+
 int push(elemento *x, struct desc_pilha *descritor)
 {
 	/*
@@ -34,7 +29,7 @@ int push(elemento *x, struct desc_pilha *descritor)
 	 * 				Descritor	- A estrutura por um ponteiro
 	 *
 	 * Função:		
-	 * 				Insere um novo elemento na ﬁla
+	 * 				Insere um novo elemento na Pilha
 	 * 
 	 * Saída:
 	 * 				0	- Se houver erro
@@ -60,6 +55,7 @@ int pop(elemento *x, struct desc_pilha *descritor)
 	
 	return 0;
 }
+
 unsigned int length(struct desc_pilha *descritor)
 {
 	/*
@@ -73,6 +69,7 @@ unsigned int length(struct desc_pilha *descritor)
 	 
 	return descritor->tamanho;
 }
+
 int print(struct nodo *ptr)
 {
 	/*
