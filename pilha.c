@@ -28,20 +28,64 @@ struct desc_pilha *init()
 }
 int push(elemento *x, struct desc_pilha *descritor)
 {
-	
+	/*
+	 * Entradas:
+	 * 				X			- Valor
+	 * 				Descritor	- A estrutura por um ponteiro
+	 *
+	 * Função:		
+	 * 				Insere um novo elemento na ﬁla
+	 * 
+	 * Saída:
+	 * 				0	- Se houver erro
+	 * 				1	- Se não houver erro
+	 */
+	 
 	return 0;
 }
 int pop(elemento *x, struct desc_pilha *descritor)
 {
+	/*
+	 * Entradas:
+	 * 				X			- Valor
+	 * 				Descritor	- A estrutura por um ponteiro
+	 *
+	 * Função:		
+	 * 				Retira um elemento da pilha, colocando-o no elemento x
+	 * 
+	 * Saída:
+	 * 				0	- Se houver erro
+	 * 				1	- Se não houver erro
+	 */
 	
 	return 0;
 }
 unsigned int length(struct desc_pilha *descritor)
 {
-	
-	return 0;
+	/*
+	 * Entradas:
+	 * 				X			- Valor
+	 * 				Descritor	- A estrutura por um ponteiro
+	 *
+	 * Função/Saída:		
+	 * 				Retorna o tamanho da fila
+	 */
+	 
+	return descritor->tamanho;
 }
-int print(struct nodo *ptr){
+int print(struct nodo *ptr)
+{
+	/*
+	 * Entradas:
+	 * 				PTR	- O pronteiro do nodo
+	 *
+	 * Função:		
+	 * 				Imprimime o ponteiro
+	 * 
+	 * Saída:
+	 * 				0	- Se houver erro
+	 * 				1	- Se não houver erro
+	 */
 	
 	return 0;
 }

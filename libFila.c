@@ -40,18 +40,18 @@ int main(int argc, char **argv)
 		do
 		{
 			scanf("%d", &escolha);
-		}while(escolha < 0 || escolha > 5);
+		}while(escolha < 0 || escolha > 4);
 
 		switch(escolha)
 		{
 			case 0:
 					//--Sair
-					printf("Saindo do programa...\n");
+					printf("		Saindo do programa...\n");
 					exit(0);
 			case 1:
 					//--Inserir
 					printf("		Insira o valor: ");
-					scanf("%d\n", &x.valor);
+					scanf("%d", &x.valor);
 					retorno = enqueue(&x, &descritor);
 					if(retorno == 1)
 					{
@@ -61,12 +61,13 @@ int main(int argc, char **argv)
 					{
 						printf("		Valor não pode ser inserido.\n");
 					}
-					getchar();
+					getchar();getchar();
+					break;
 			case 2:
 					//--Remover
 					printf("		Remover o valor: ");
-					scanf("%d\n", &x.valor);
-					//retorno = dequeue(elemento *x, struct desc_fila *descritor);
+					scanf("%d", &x.valor);
+					retorno = dequeue(&x, &descritor);
 					if(retorno == 1)
 					{
 						printf("		Valor removido com sucesso!\n");
@@ -75,10 +76,11 @@ int main(int argc, char **argv)
 					{
 						printf("		Valor não pode ser removido.\n");
 					}
-					getchar();
+					getchar();getchar();
+					break;
 			case 3:
 					//--Tamanho
-					//retorno = length(struct desc_fila *descritor);
+					retorno = length(&descritor);
 					if( retorno < 1)
 					{
 						printf("		A fila está vazia.\n");
@@ -87,15 +89,16 @@ int main(int argc, char **argv)
 					{
 						printf("		Tamanho: %d", retorno);
 					}
-					getchar();
+					getchar();getchar();
+					break;
 			case 4:
 					//--Print Nodo
 					print(NODO);
+					break;
 			default:
-					printf("Você não deveria estar aqui! õ.O\n	Saindo do programa...");
+					printf("Você não deveria estar aqui! õ.O\n	Saindo do programa...\n");
 					exit(0);
 		}
 	}
-	return 0;
 }
 
