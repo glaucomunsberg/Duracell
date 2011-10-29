@@ -1,3 +1,8 @@
+Versão 0.7
+	Implementação
+		Enqueue, Imprimir e Length
+	Correções
+		Da estrutura da Lista
 Versão 0.6
 	Correções
 		Testes de operação
@@ -32,6 +37,7 @@ Versão 0.1
 	Implementação
 		Criação da base do projeto como arquivos *.c, *h, Makefile e
 			Wiki com as especificações do trabalho
+		Criação Top-down
 
 Versão 0.0
 	Implementação

@@ -23,7 +23,7 @@ struct desc_pilha *init()
 	 *
 	 * Função:		Aloca espaço, inicializa pilha
 	 * 
-	 * Saída:		Um ponteiro para um descritor de lista
+	 * Saída:		Um ponteiro para um descritor de fila
 	 */
 	 
 	  struct desc_pilha *descritor;
@@ -55,6 +55,7 @@ int push(elemento *x, struct desc_pilha *descritor)
 	 * 				0	- Se houver erro
 	 * 				1	- Se não houver erro
 	 */
+	 
 	 if(descritor->tamanho == MAX)
 	 {
 		 return 0;
@@ -90,6 +91,7 @@ int pop(elemento *x, struct desc_pilha *descritor)
 	 * 				0	- Se houver erro
 	 * 				1	- Se não houver erro
 	 */
+	 
 	 if(descritor->head == NULL)
 	 {
 		 return 0;

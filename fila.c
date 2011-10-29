@@ -14,11 +14,33 @@
  */   
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "fila.h"
 
 struct desc_fila *init()
 {
-	
+	/*
+	 * Entradas:	Não tem
+	 *
+	 * Função:		Aloca espaço, inicializa fila
+	 * 
+	 * Saída:		Um ponteiro para um descritor de fila
+	 */
+	 
+	struct desc_fila *descritor;
+	descritor = malloc(sizeof(struct desc_fila));
+	if( descritor == NULL)
+	{
+		printf("		Oops! Não há memoria para alocar!");
+		getchar();getchar();
+		exit(1);
+	}
+	else
+	{
+		descritor->head = NULL;
+		descritor->tail = NULL;
+		descritor->tamanho = 0;
+	}
 }
 
 int enqueue(elemento *x, struct desc_fila *descritor)
@@ -35,7 +57,31 @@ int enqueue(elemento *x, struct desc_fila *descritor)
 	 * 				0	- Se houver erro
 	 * 				1	- Se não houver erro
 	 */
-	return 0;
+	 
+	if(descritor->tamanho == MAX)
+	{
+		return 0;
+	}
+	 
+	struct nodo *novo;
+	novo = malloc( sizeof(struct nodo));
+	 
+	if( novo == NULL)
+	{
+		return 0;
+	}
+	
+	if(descritor->head == NULL)
+	{
+		descritor->tail = novo;
+	}
+	
+	novo->chave.valor = x->valor;
+	novo->next = descritor->head;
+	descritor->head = novo;
+	descritor->tamanho++;
+	
+	return 1;
 }
 
 int dequeue(elemento *x, struct desc_fila *descritor)
@@ -53,7 +99,7 @@ int dequeue(elemento *x, struct desc_fila *descritor)
 	 * 				1	- Se não houver erro
 	 */
 	 
-	return 0;
+	return 1;
 }
 
 unsigned int length(struct desc_fila * descritor)
@@ -67,7 +113,7 @@ unsigned int length(struct desc_fila * descritor)
 	 * 				Retorna o tamanho da fila
 	 */
 	 
-	return 0;
+	return descritor->tamanho;
 }
 
 int print(struct nodo * ptr)

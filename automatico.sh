@@ -26,7 +26,7 @@ while [ $start = true ]; do
 		git add Makefile
 		echo "- Insira o nome do commit:                      -"
 		read nome
-		git commit -m ${nome// /_}
+		git commit -m ${nome// /_} #Substitu os espaços por underline
 		clear
 		echo "- Commintando...                                -"
 		git remote add origin git@github.com:glaucomunsberg/Duracell.git
