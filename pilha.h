@@ -1,6 +1,6 @@
 #ifndef PILHA_H 
 #define PILHA_H
-
+#define MAX 10
 typedef struct{
 	int valor;
 }elemento;
@@ -12,7 +12,6 @@ struct nodo{
 
 struct desc_pilha{
 	struct nodo *head;
-	struct nodo *tail;
 	int tamanho;
 };
 

@@ -14,11 +14,33 @@
  */  
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "pilha.h"
 
 struct desc_pilha *init()
 {
-	
+	/*
+	 * Entradas:	Não tem
+	 *
+	 * Função:		Aloca espaço, inicializa pilha
+	 * 
+	 * Saída:		Um ponteiro para um descritor de lista
+	 */
+	 
+	  struct desc_pilha *descritor;
+	  descritor = malloc(sizeof(struct desc_pilha));
+	  if( descritor == NULL)
+	  {
+		  printf("		Oops! Não há memoria para alocar!");
+		  getchar();getchar();
+		  exit(1);
+	  }
+	  else
+	  {
+		  descritor->head = NULL;
+		  descritor->tamanho = 0;
+	  }
+	 
 }
 
 int push(elemento *x, struct desc_pilha *descritor)
@@ -36,8 +58,26 @@ int push(elemento *x, struct desc_pilha *descritor)
 	 * 				1	- Se não houver erro
 	 */
 	 
-	return 0;
+	 if(descritor->tamanho == MAX)
+	 {
+		 return 0;
+	 }
+	 
+	 struct nodo *novo;
+	 novo = malloc( sizeof(struct nodo));
+	 if( novo == NULL)
+	 {
+		 return 0;
+	 }
+	 
+	 novo->chave.valor = x->valor;
+	 novo->next = descritor->head;
+	 descritor->head = novo;
+	 descritor->tamanho++;
+	 
+	return 1;
 }
+
 int pop(elemento *x, struct desc_pilha *descritor)
 {
 	/*
