@@ -16,7 +16,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "pilha.h"
-
 struct desc_pilha *init()
 {
 	/*
@@ -40,7 +39,6 @@ struct desc_pilha *init()
 		  descritor->head = NULL;
 		  descritor->tamanho = 0;
 	  }
-	 
 }
 
 int push(elemento *x, struct desc_pilha *descritor)
@@ -57,7 +55,6 @@ int push(elemento *x, struct desc_pilha *descritor)
 	 * 				0	- Se houver erro
 	 * 				1	- Se não houver erro
 	 */
-	 
 	 if(descritor->tamanho == MAX)
 	 {
 		 return 0;
@@ -65,6 +62,7 @@ int push(elemento *x, struct desc_pilha *descritor)
 	 
 	 struct nodo *novo;
 	 novo = malloc( sizeof(struct nodo));
+	 
 	 if( novo == NULL)
 	 {
 		 return 0;
@@ -92,8 +90,16 @@ int pop(elemento *x, struct desc_pilha *descritor)
 	 * 				0	- Se houver erro
 	 * 				1	- Se não houver erro
 	 */
-	
-	return 0;
+	 if(descritor->head == NULL)
+	 {
+		 return 0;
+	 }
+	 
+	 x = &descritor->head->chave;
+	 descritor->head = descritor->head->next;
+	 descritor->tamanho--;
+	 
+	 return 1;
 }
 
 unsigned int length(struct desc_pilha *descritor)
@@ -123,6 +129,13 @@ int print(struct nodo *ptr)
 	 * 				0	- Se houver erro
 	 * 				1	- Se não houver erro
 	 */
-	
-	return 0;
+	 
+	 if(ptr == NULL)
+	 {
+		 return 0;
+	 }
+	 
+	 printf("		Valor: %d", ptr->chave.valor);
+	 
+	return 1;
 }

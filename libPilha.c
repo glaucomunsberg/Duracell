@@ -25,12 +25,26 @@ int main(int argc, char **argv)
 	int escolha;
 	int retorno;
 	int posi;
+	int input;
+	int output;
 	unsigned int posicao;
-	struct desc_pilha *descritor;
-	descritor = init();
-	struct nodo *NODO;
+	
 	elemento x;
 	
+	struct nodo *NODO;
+	NODO = malloc(sizeof(struct nodo));
+	
+	struct desc_pilha *descritor;
+	descritor = init();
+	
+	input = output = 0;
+	
+	/*
+	 * Obs.: Input e Output para atribuir ao nodo
+	 * 	apenas quando estiver inserido e deletado
+	 * 	um elemento qualquer.
+	 */
+	 
 	//-------------------------------------------
 	
 	for(;;)
@@ -56,21 +70,23 @@ int main(int argc, char **argv)
 					if(retorno == 1)
 					{
 						printf("		Valor inserido com sucesso!\n");
+						input = 1;
 					}
 					else
 					{
 						printf("		Valor não pode ser inserido.\n");
 					}
+					
 					getchar();getchar();
 					break;
 			case 2:
 					//--Remover
-					printf("		Remover o valor: ");
-					scanf("%d", &x.valor);
 					retorno = pop(&x, descritor);
 					if(retorno == 1)
 					{
 						printf("		Valor removido com sucesso!\n");
+						NODO->chave = x;
+						output = 1;
 					}
 					else
 					{
@@ -89,14 +105,29 @@ int main(int argc, char **argv)
 					{
 						printf("		Tamanho: %d", retorno);
 					}
+					
 					getchar();getchar();
 					break;
 			case 4:
 					//--Print Nodo
-					print(NODO);
+					if(input == 1 && output == 1)
+					{
+						retorno = print(NODO);
+					}
+					else
+					{
+						retorno = 0;
+					}
+					
+					if( retorno == 0)
+					{
+						printf("		Valor não pode ser imprimido.\n");
+					}
+					
+					getchar();getchar();
 					break;
 			case 5:
-					//--Print da Estutura
+					//--imprimir da Estutura
 					imprimir(descritor);
 					getchar();getchar();
 					break;
