@@ -1,3 +1,10 @@
+Versão 0.6
+	Correções
+		Testes de operação
+		Controle de interação
+	Observações
+		Fim da implementação da Pilha
+		
 Versão 0.5
 	Implementação
 		Push, Print Nodo  Length
@@ -31,8 +38,4 @@ Versão 0.0
 		Automatico do projeto e acertos do git e github
 		
 ° We have a problem Houston?!
-	- No problem.
-
-° Obs.:
-	F - Implementação da Fila
-	P - Implementação da Pilha
+	None
