@@ -84,11 +84,12 @@ int main(int argc, char **argv)
 					break;
 			case 2:
 					//--Remover
+					printf("		Foi o valor( %d )\n", x->valor);
 					retorno = dequeue(x, descritor);
 					if(retorno == 1)
 					{
 						NODO->chave.valor = x->valor;
-						printf("		Valor removido com sucesso!( %d )\n", x->valor);
+						printf("		Valor removido com sucesso!( %d )\n", NODO->chave.valor);
 						output = 1;
 					}
 					else

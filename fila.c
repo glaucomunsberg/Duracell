@@ -98,7 +98,7 @@ int dequeue(elemento *x, struct desc_fila *descritor)
 	 * 				0	- Se houver erro
 	 * 				1	- Se não houver erro
 	 */
-	 
+
 	 if(descritor->head == NULL || descritor->tail == NULL)
 	 {
 		 return 0;
@@ -122,11 +122,12 @@ int dequeue(elemento *x, struct desc_fila *descritor)
 		 
 		 if(temp->next->next == NULL)
 		 {
+			 printf("x é %d\n", x->valor);
 			 x = &descritor->tail->chave;
 			 descritor->tail = temp;
 			 descritor->tamanho--;
 			 temp->next = NULL;
-			 printf("valor do tail é %d", x->valor);
+			 printf("x agora é %d\n	", x->valor);
 			 return 1;
 		 }
 		 else
