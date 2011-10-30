@@ -29,7 +29,8 @@ int main(int argc, char **argv)
 	int output;
 	unsigned int posicao;
 	
-	elemento x;
+	elemento *x;
+	x = malloc(sizeof(struct nodo));
 	
 	struct nodo *NODO;
 	NODO = malloc(sizeof(struct nodo));
@@ -67,8 +68,8 @@ int main(int argc, char **argv)
 			case 1:
 					//--Inserir
 					printf("		Insira o valor: ");
-					scanf("%d", &x.valor);
-					retorno = enqueue(&x, descritor);
+					scanf("%d", &x->valor);
+					retorno = enqueue(x, descritor);
 					if(retorno == 1)
 					{
 						printf("		Valor inserido com sucesso!\n");
@@ -83,11 +84,11 @@ int main(int argc, char **argv)
 					break;
 			case 2:
 					//--Remover
-					retorno = dequeue(&x, descritor);
+					retorno = dequeue(x, descritor);
 					if(retorno == 1)
 					{
-						printf("		Valor removido com sucesso!\n");
-						NODO->chave = x;
+						NODO->chave.valor = x->valor;
+						printf("		Valor removido com sucesso!( %d )\n", x->valor);
 						output = 1;
 					}
 					else

@@ -99,7 +99,42 @@ int dequeue(elemento *x, struct desc_fila *descritor)
 	 * 				1	- Se não houver erro
 	 */
 	 
-	return 1;
+	 if(descritor->head == NULL || descritor->tail == NULL)
+	 {
+		 return 0;
+	 }
+	 
+	 if(descritor->head == descritor->tail)
+	 {
+		 x = &descritor->tail->chave;
+		 descritor->tail = NULL;
+		 descritor->head = NULL;
+		 descritor->tamanho--;
+		 return 1;
+	 }
+	 
+	 struct nodo *temp;
+	 temp = malloc(sizeof(struct nodo));
+	 temp = descritor->head;
+	 
+	 while( temp->next != NULL)
+	 {
+		 
+		 if(temp->next->next == NULL)
+		 {
+			 x = &descritor->tail->chave;
+			 descritor->tail = temp;
+			 descritor->tamanho--;
+			 temp->next = NULL;
+			 printf("valor do tail é %d", x->valor);
+			 return 1;
+		 }
+		 else
+		 {
+			 temp = temp->next;
+		 }
+	 }
+	 return 0;
 }
 
 unsigned int length(struct desc_fila * descritor)
@@ -110,7 +145,7 @@ unsigned int length(struct desc_fila * descritor)
 	 * 				Descritor	- A estrutura por um ponteiro
 	 *
 	 * Função/Saída:		
-	 * 				Retorna o tamanho da fila
+	 * 							Retorna o tamanho da fila
 	 */
 	 
 	return descritor->tamanho;
@@ -129,6 +164,12 @@ int print(struct nodo * ptr)
 	 * 				0	- Se houver erro
 	 * 				1	- Se não houver erro
 	 */
+	 if(ptr == NULL)
+	 {
+		 return 0;
+	 }
 	 
-	return 0;
+	 printf("		Valor: %d", ptr->chave.valor);
+	 
+	 return 1;
 }

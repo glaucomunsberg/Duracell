@@ -1,3 +1,7 @@
+Versão 0.8
+	Implementação
+		Enqueue e Print Nodo
+		
 Versão 0.7
 	Implementação
 		Enqueue, Imprimir e Length
@@ -12,7 +16,7 @@ Versão 0.6
 		
 Versão 0.5
 	Implementação
-		Push, Print Nodo  Length
+		Pop, Print Nodo  Length
 	Correções
 		Interface
 		
@@ -44,4 +48,4 @@ Versão 0.0
 		Automatico do projeto e acertos do git e github
 		
 ° We have a problem Houston?!
-	None
+	Yes. O retorno do enqueue não está correto;
