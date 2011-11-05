@@ -1,27 +1,30 @@
 ############################# Makefile ##########################
 
-all: libPilha libFila
+all: Pilha Fila
 
 # Pilha #########################################################
 
-PI = libPilha.o pilha.o
-libPilha:$(PI)
-		gcc -g $(PI) -o libPilha
+PI = Pilha.o pilha.o
+Pilha:$(PI)
+		gcc -g $(PI) -o Pilha
 		
-libPilha.o: pilha.h libPilha.c
-		gcc -c libPilha.c
+Pilha.o: pilha.h Pilha.c
+		gcc -c Pilha.c
  
 pilha.o: pilha.h pilha.c
 		gcc -c pilha.c
 
 # Fila #########################################################
 
-FI = libFila.o fila.o
-libFila:$(FI)
-		gcc -g $(FI) -o libFila
+FI = Fila.o fila.o
+Fila:$(FI)
+		gcc -g $(FI) -o Fila
 		
-libFila.o: fila.h libFila.c
-		gcc -c libFila.c
+Fila.o: fila.h Fila.c
+		gcc -c Fila.c
  
 fila.o: fila.h fila.c
 		gcc -c fila.c
+
+clean :
+		rm edit *.o

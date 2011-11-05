@@ -140,7 +140,7 @@ int dequeue(elemento *x, struct desc_fila *descritor)
 	 return 0;
 }
 
-unsigned int length(struct desc_fila * descritor)
+unsigned int length(struct desc_fila *descritor)
 {
 	/*
 	 * Entradas:
@@ -154,7 +154,7 @@ unsigned int length(struct desc_fila * descritor)
 	return descritor->tamanho;
 }
 
-int print(struct nodo * ptr)
+int print(struct nodo *ptr)
 {
 	/*
 	 * Entradas:
@@ -167,6 +167,7 @@ int print(struct nodo * ptr)
 	 * 				0	- Se houver erro
 	 * 				1	- Se não houver erro
 	 */
+	 
 	 if(ptr == NULL)
 	 {
 		 return 0;
