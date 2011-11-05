@@ -1,6 +1,7 @@
 Versão 0.9
 	Correções
-		Teste e encontrada falha no elemento x
+		Teste
+		
 Versão 0.8
 	Implementação
 		Enqueue e Print Nodo
@@ -51,4 +52,4 @@ Versão 0.0
 		Automatico do projeto e acertos do git e github
 		
 ° We have a problem Houston?!
-	Yes. O retorno do enqueue não está correto;
+	Yes. O do elemento x está errada;

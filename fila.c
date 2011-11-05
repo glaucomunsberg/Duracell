@@ -98,14 +98,16 @@ int dequeue(elemento *x, struct desc_fila *descritor)
 	 * 				0	- Se houver erro
 	 * 				1	- Se não houver erro
 	 */
-
+	 
 	 if(descritor->head == NULL || descritor->tail == NULL)
 	 {
+		 //Se fila vazia
 		 return 0;
 	 }
 	 
 	 if(descritor->head == descritor->tail)
 	 {
+		 // Se fila com um elemento
 		 x = &descritor->tail->chave;
 		 descritor->tail = NULL;
 		 descritor->head = NULL;
@@ -113,6 +115,7 @@ int dequeue(elemento *x, struct desc_fila *descritor)
 		 return 1;
 	 }
 	 
+	 //Se fila com mais de um elemento	
 	 struct nodo *temp;
 	 temp = malloc(sizeof(struct nodo));
 	 temp = descritor->head;
@@ -122,12 +125,11 @@ int dequeue(elemento *x, struct desc_fila *descritor)
 		 
 		 if(temp->next->next == NULL)
 		 {
-			 printf("x é %d\n", x->valor);
+			 
 			 x = &descritor->tail->chave;
 			 descritor->tail = temp;
 			 descritor->tamanho--;
 			 temp->next = NULL;
-			 printf("x agora é %d\n	", x->valor);
 			 return 1;
 		 }
 		 else
